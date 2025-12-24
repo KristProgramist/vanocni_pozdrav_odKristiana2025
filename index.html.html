@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Vánoční přání 🎄</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #0b2e1c, #02160d);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .card {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.25);
+            backdrop-filter: blur(6px);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff3b3b;
+            text-shadow: 0 0 15px gold;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #ffd966;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-top: 25px;
+        }
+
+        .tree {
+            font-size: 5rem;
+            margin: 30px 0;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00ff99; }
+            to   { text-shadow: 0 0 30px gold; }
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #c7c7c7;
+        }
+
+        /* sníh */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            user-select: none;
+            pointer-events: none;
+            animation-name: fall;
+            animation-timing-function: linear;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Veselé Vánoce 🎄</h1>
+
+    <div class="tree">🎄✨🎄</div>
+
+    <h2>Plné klidu, radosti a světla</h2>
+
+    <p>
+        Přeji Ti Vánoce, které voní po skořici,
+        zní smíchem, hřejí u srdce
+        a přinesou přesně to, co právě potřebuješ.
+    </p>
+
+    <p>
+        Ať nový rok otevře dveře zdraví, štěstí
+        a drobným zázrakům, které dělají život krásným.
+    </p>
+
+    <div class="footer">
+        ❤️ S přátelským pozdravem, začinající Pythonista a Programátor Kristián Badarovský (2025)
+    </div>
+</div>
+
+<script>
+    function createSnowflake() {
+        const snowflake = document.createElement("div");
+        snowflake.classList.add("snowflake");
+        snowflake.innerHTML = "❄";
+
+        snowflake.style.left = Math.random() * window.innerWidth + "px";
+        snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
+        snowflake.style.opacity = Math.random();
+        snowflake.style.animationDuration = Math.random() * 5 + 5 + "s";
+
+        document.body.appendChild(snowflake);
+
+        setTimeout(() => {
+            snowflake.remove();
+        }, 10000);
+    }
+
+    setInterval(createSnowflake, 300);
+</script>
+
+</body>
+</html>
